@@ -14,20 +14,21 @@
 13,critics,Critic reviews with no score,0,"Kept text for sentiment, score left NaN (not imputed)",Missing critic score is not zero; imputing a mean would shrink disagreement
 14,critics,Duplicate critic blurbs,0,Dropped,Same review counted twice biases the mean
 15,imdb,"IMDb vote distribution stored as text (""1: 46, 2: 9, 3:10"")",10,"Parsed to (stars int, votes int) with regex tolerant of missing spaces",Counts stored as text must be integers
-16,imdb,Full-text critic reviews in imdb.txt with no numeric score,3,Kept for sentiment only; flagged has_score=False,Film-level critic score comes from the rated reviews; text still carries tone
-17,imdb,"Full reviews mention other works (Adipurush, 1987 serial) in passing",3,Kept film_key = ramayana_part1_2026 for whole reviews,A review of Part 1 that compares it to Adipurush is still a review of Part 1
-18,imdb,"""Also Read:"" cross-promo lines inside review texts",2,Removed from text,Unrelated headlines would distort sentiment
-19,reddit,Lines that are not valid JSON,0,Skipped,Truncated last line of a dump still being written
-20,reddit,Raw comments loaded (all subreddits),47616,Loaded,Starting count
-21,reddit,"General-sub comments (r/bollywood, r/IndianCinema) not about any Ramayana work",12589,Dropped,They discuss other films; keeping them would mix sentiment across films
-22,reddit,"Comments about other Ramayana works (Adipurush, 1987 TV serial, anime, Part 2)",1036,Kept with their own film_key,"Same name family, different film; needed for the cross-film comparison"
-23,reddit,"Deleted / removed comments (""[deleted]"", ""[removed]"")",65,Dropped from text analysis,No text to score; replies to them are kept because they stand on their own
-24,reddit,"Bot comments (AutoModerator, *bot accounts, ""I am a bot"" signatures)",1065,Dropped,Automated text is not audience opinion
-25,reddit,Same comment id appearing twice (re-crawled),0,Dropped exact id duplicates (kept first),"Re-crawl artefact, not a second opinion"
-26,reddit,"Duplicate comments (same account, same text)",254,"Dropped, kept first",Double-posts would count one opinion twice
-27,reddit,Comments empty after removing links/quotes/images,886,Dropped,Nothing left to score
-28,reddit,Usernames (author field + u/ mentions in text),32757,Author column dropped; u/name in text replaced by [user],Personal data is not needed for film-level analysis
-29,reddit,Epoch timestamps and text scores,32757,created_utc -> IST datetime; score -> Int64,Daily analysis is in Indian time; score must be numeric
-30,box_office,Spreadsheet vs pandas: same ₹-text -> crore step done both ways,16,16/16 rows agree between LibreOffice formulas and pandas,Module 1 comparison: a spreadsheet formula is visible per cell but brittle; pandas is one tested function reused everywhere
-31,all,"Voices on different scales (stars /5, IMDb /10, sentiment −1..+1)",5,Min-max to 0–1 using each scale's full range; z-score across voices,Puts every voice on one footing for comparison
-32,sentiment,VADER validated on IMDb 50K labelled corpus: accuracy 69.8%,50000,Threshold compound >= 0 = positive; method accepted with known bias,Check the method on labelled data before trusting it on unlabelled Ramayana text
+16,imdb,"ThePrint text is a round-up of foreign press coverage (BBC, China export), not a review of the film",1,"Kept in file, flagged is_review=False, excluded from critic sentiment and term analysis","Its words (China, export, BBC) describe media coverage, not the film; it would distort the critic voice"
+17,imdb,Full-text critic reviews in imdb.txt with no numeric score,3,Kept for sentiment only; flagged has_score=False,Film-level critic score comes from the rated reviews; text still carries tone
+18,imdb,"Full reviews mention other works (Adipurush, 1987 serial) in passing",3,Kept film_key = ramayana_part1_2026 for whole reviews,A review of Part 1 that compares it to Adipurush is still a review of Part 1
+19,imdb,"""Also Read:"" cross-promo lines inside review texts",2,Removed from text,Unrelated headlines would distort sentiment
+20,reddit,Lines that are not valid JSON,0,Skipped,Truncated last line of a dump still being written
+21,reddit,Raw comments loaded (all subreddits),47616,Loaded,Starting count
+22,reddit,"General-sub comments (r/bollywood, r/IndianCinema) not about any Ramayana work",12589,Dropped,They discuss other films; keeping them would mix sentiment across films
+23,reddit,"Comments about other Ramayana works (Adipurush, 1987 TV serial, anime, Part 2)",1036,Kept with their own film_key,"Same name family, different film; needed for the cross-film comparison"
+24,reddit,"Deleted / removed comments (""[deleted]"", ""[removed]"")",65,Dropped from text analysis,No text to score; replies to them are kept because they stand on their own
+25,reddit,"Bot comments (AutoModerator, *bot accounts, ""I am a bot"" signatures)",1065,Dropped,Automated text is not audience opinion
+26,reddit,Same comment id appearing twice (re-crawled),0,Dropped exact id duplicates (kept first),"Re-crawl artefact, not a second opinion"
+27,reddit,"Duplicate comments (same account, same text)",254,"Dropped, kept first",Double-posts would count one opinion twice
+28,reddit,Comments empty after removing links/quotes/images,886,Dropped,Nothing left to score
+29,reddit,Usernames (author field + u/ mentions in text),32757,Author column dropped; u/name in text replaced by [user],Personal data is not needed for film-level analysis
+30,reddit,Epoch timestamps and text scores,32757,created_utc -> IST datetime; score -> Int64,Daily analysis is in Indian time; score must be numeric
+31,box_office,Spreadsheet vs pandas: same ₹-text -> crore step done both ways,16,16/16 rows agree between LibreOffice formulas and pandas,Module 1 comparison: a spreadsheet formula is visible per cell but brittle; pandas is one tested function reused everywhere
+32,all,"Voices on different scales (stars /5, IMDb /10, sentiment −1..+1)",5,Min-max to 0–1 using each scale's full range; z-score across voices,Puts every voice on one footing for comparison
+33,sentiment,VADER validated on IMDb 50K labelled corpus: accuracy 69.8%,50000,Threshold compound >= 0 = positive; method accepted with known bias,Check the method on labelled data before trusting it on unlabelled Ramayana text

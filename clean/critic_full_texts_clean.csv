@@ -1,4 +1,4 @@
-publication,text,film_key,n_words,compound
+publication,text,film_key,n_words,is_review,compound
 The News Minute,"In one of the scenes in Nitesh Tiwari’s Ramayana: Part 1, Ram (Ranbir Kapoor) asks what the purpose of his birth is. He is vulnerable, confused, and deeply shaken by the odds that have consecutively been stacked against him. It is only in those fleeting moments, towards the end of the film, that we get some insight into the protagonist’s conflict in an adaptation that is otherwise deliberately held back. And this denial of interiority is neither without purpose nor limited to Ram.
 
 Nitesh’s cinematic iteration of Valmiki’s epic anchors itself on caution. Everything is calculated, tepid even, in what seems like an attempt to prevent the story from making any detour that may offend bhakts or stir up controversy. But in its anxiety to avoid transgression, the film also relinquishes the artistic freedom to complicate inherited truths. By doing so, it reveals itself as a propaganda machine which flattens the interpretative potential of art and instead makes it a vehicle for cultural consolidation.
@@ -83,7 +83,7 @@ Even while promoting the film, Nitesh and his team made sure that there was a ce
 
 Therefore, there is a peculiar irony when an industry that has helped turn myth into political property now discovers that it can no longer exercise artistic ownership over it. 
 
-The right-wing prescription and backlash over Ramayana: Part 1 is, of course, unfair. But it is hard to place its makers and actors as victims because this is a demon of a complacent industry’s own making. It remains to be seen how they would take the franchise forward from here– by passing the ideological litmus test or discovering that there are only newer ways to fail. "",",ramayana_part1_2026,2062,-0.05411666666666667
+The right-wing prescription and backlash over Ramayana: Part 1 is, of course, unfair. But it is hard to place its makers and actors as victims because this is a demon of a complacent industry’s own making. It remains to be seen how they would take the franchise forward from here– by passing the ideological litmus test or discovering that there are only newer ways to fail. "",",ramayana_part1_2026,2062,True,-0.05411666666666667
 ThePrint,"New Delhi: The epic tale of Ram and Sita is back in the spotlight in India’s most expensive film to date.
 
 BBC delves into the enduring hold of the Ramayana as Namit Malhotra and Nitesh Tiwari bring it back to the big screen.. 
@@ -138,7 +138,7 @@ At the same time, it says India’s pursuit of “self-reliance” and efforts t
 
 Taking aim at Western coverage, the Global Times says certain US media outlets have shown particular “enthusiasm” for the issue. It mentions Bloomberg‘s description of the export controls as “a trade war risk to India”, while accusing The New York Times of portraying China’s industrial strengths as a “source of economic leverage” and claiming that “Beijing was building up its arsenal of economic weapons”.
 
-The editorial further argues that such coverage seeks to “drive a wedge between China and India”, urging the two countries to address the issue through technical channels, rather than allow it to undermine broader bilateral relations.",ramayana_part1_2026,1102,-0.02367333333333333
+The editorial further argues that such coverage seeks to “drive a wedge between China and India”, urging the two countries to address the issue through technical channels, rather than allow it to undermine broader bilateral relations.",ramayana_part1_2026,1102,False,-0.02367333333333333
 indiatoday,"The internet had already made up its mind about Ramayana long before November 5. The VFX looked artificial, the reported Rs 4,000 crore budget invited ridicule, Ranbir Kapoor was supposedly the wrong choice for Rama, and Sai Pallavi had to endure scrutiny over her suitability to play Sita. Even the music, composed by AR Rahman and Hans Zimmer, was being dissected before audiences could experience it in context. To put it simply, a film that began as perhaps the most anticipated Indian cinematic spectacle, touted as India's answer to Hollywood, had become one of the most trolled and written-off films even before its release.
 
 For a film carrying the weight of one of India's most revered epics, the expectations were enormous. Every promotional frame was scrutinised, and every creative decision became an invitation for another online argument.
@@ -197,4 +197,4 @@ The background score also struggles to consistently match the emotional and visu
 
 Ultimately, Ramayana has not proved that the internet was wrong about everything. It has, however, demonstrated that promotional footage is not a substitute for the finished film. Its VFX has exceeded expectations, its performances have found appreciation, and its quieter moments have given the spectacle an emotional foundation.
 
-The film still has room to improve, particularly in its music, pacing and character development. But perhaps the most interesting takeaway is this: the internet spent months debating whether Ramayana could look like an epic. The theatrical release has shown that, at least visually, it can. Now comes the harder task of making audiences feel the epic as deeply as they see it.",ramayana_part1_2026,1589,0.1177938144329897
+The film still has room to improve, particularly in its music, pacing and character development. But perhaps the most interesting takeaway is this: the internet spent months debating whether Ramayana could look like an epic. The theatrical release has shown that, at least visually, it can. Now comes the harder task of making audiences feel the epic as deeply as they see it.",ramayana_part1_2026,1589,True,0.1177938144329897

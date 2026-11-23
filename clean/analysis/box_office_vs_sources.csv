@@ -1,0 +1,5 @@
+source,signal_0_1,predicted_week2,actual
+Critics (stars),0.635,Middling (0.64): expect a normal Bollywood fall-off after the opening weekend,Per-day gross on days 5-10 was 1.12x the opening-weekend per-day average (≤ because weekend is a lower bound)
+IMDb users,0.816,Strong (0.82): expect word of mouth to hold collections up,Per-day gross on days 5-10 was 1.12x the opening-weekend per-day average (≤ because weekend is a lower bound)
+Reddit (level),0.543,Lukewarm (0.54): expect a drop,Per-day gross on days 5-10 was 1.12x the opening-weekend per-day average (≤ because weekend is a lower bound)
+Reddit (week 1 -> week 2 change),0.001,Mood rose in week 2,Per-day gross on days 5-10 was 1.12x the opening-weekend per-day average (≤ because weekend is a lower bound)

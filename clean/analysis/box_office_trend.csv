@@ -1,0 +1,4 @@
+period,days,gross_cr,per_day_cr,note
+"Opening day (day 1, 5 Nov)",1,121.62,121.62,
+"Opening weekend (days 1-4, 5-8 Nov)",4,500.0,125.0,"Reported as ""over ₹500 crore"" -> lower bound"
+"Days 5-10 (9-14 Nov, incl. start of week 2)",6,843.49,140.58,Upper bound (cumulative minus a lower-bound weekend)

@@ -1,0 +1,1 @@
+Spark 3.5.3; text rows processed: 82300

@@ -1,0 +1,13 @@
+,mean,mean,mean,mean,mean,size,size,size,size,size
+source,critic_blurbs,critic_full_texts,reddit_r/IndianCinema,reddit_r/RamayanaTheFilm,reddit_r/bollywood,critic_blurbs,critic_full_texts,reddit_r/IndianCinema,reddit_r/RamayanaTheFilm,reddit_r/bollywood
+aspect,,,,,,,,,,
+Direction / Tiwari,0.354,-0.119,0.25,0.049,0.31,3.0,4.0,64.0,687.0,23.0
+Emotion & warmth,0.553,0.265,0.185,0.109,0.175,5.0,14.0,130.0,1567.0,51.0
+Faithfulness / Valmiki,0.557,-0.099,0.072,0.045,0.106,1.0,11.0,164.0,1448.0,12.0
+Length & pacing,0.564,0.227,0.062,0.043,0.212,3.0,4.0,68.0,801.0,20.0
+Music & songs,,0.09,0.16,0.137,0.121,,9.0,56.0,952.0,39.0
+Rama / Ranbir,0.624,0.054,0.027,0.033,0.149,2.0,41.0,177.0,3094.0,89.0
+Ravana / Yash,0.673,0.058,0.005,-0.038,0.128,3.0,27.0,176.0,3739.0,75.0
+Sita / Sai Pallavi,,-0.019,-0.111,-0.054,0.1,,27.0,103.0,2009.0,50.0
+Story & screenplay,0.453,-0.032,0.169,0.083,0.132,4.0,10.0,216.0,2230.0,58.0
+VFX & visuals,0.576,0.073,0.213,0.14,0.357,6.0,20.0,165.0,1815.0,49.0

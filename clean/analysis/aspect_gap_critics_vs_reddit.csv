@@ -1,0 +1,11 @@
+aspect,mean_Critics,mean_Reddit,size_Critics,size_Reddit,gap_critics_minus_reddit_0_1
+Faithfulness / Valmiki,-0.044,0.048,12,1624,-0.046
+Music & songs,0.09,0.138,9,1047,-0.024
+Direction / Tiwari,0.084,0.073,7,774,0.005
+Story & screenplay,0.107,0.091,14,2504,0.008
+Sita / Sai Pallavi,-0.019,-0.053,27,2162,0.017
+VFX & visuals,0.189,0.151,26,2029,0.019
+Rama / Ranbir,0.081,0.036,43,3360,0.022
+Ravana / Yash,0.12,-0.033,30,3990,0.076
+Emotion & warmth,0.341,0.116,19,1748,0.112
+Length & pacing,0.372,0.048,7,889,0.162

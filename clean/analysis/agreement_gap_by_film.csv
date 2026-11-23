@@ -1,0 +1,6 @@
+film_key,critic_stars_0_1,critic_text_sent_0_1,imdb_users_0_1,reddit_sent_0_1,n_reddit,gap_critic_minus_reddit,gap_critic_minus_imdb,gap_imdb_minus_reddit,gap_critic_text_minus_reddit_text,note
+adipurush_2023,,,,0.542,508,,,,,No critic score in our data (only Reddit mentions); gap undefined
+ramayan_tv_1987,,,,0.547,227,,,,,No critic score in our data (only Reddit mentions); gap undefined
+ramayana_anime_1993,,,,0.627,66,,,,,No critic score in our data (only Reddit mentions); gap undefined
+ramayana_part1_2026,0.635,0.776,0.816,0.543,31754,0.092,-0.181,0.273,0.234,
+ramayana_part2_2027,,,,0.555,202,,,,,No critic score in our data (only Reddit mentions); gap undefined

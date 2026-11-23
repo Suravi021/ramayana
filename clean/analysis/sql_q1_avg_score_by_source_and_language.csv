@@ -1,0 +1,11 @@
+voice,source_id,language,n,avg_sentiment_0_1
+Critics,critic_blurbs,Hindi,17,0.776
+Reddit,reddit_r/IndianCinema,Japanese/English,13,0.677
+Reddit,reddit_r/bollywood,Hindi,149,0.663
+Reddit,reddit_r/RamayanaTheFilm,Japanese/English,49,0.625
+Reddit,reddit_r/IndianCinema,Hindi,1312,0.577
+Reddit,reddit_r/bollywood,Hindi/Telugu,2,0.567
+Reddit,reddit_r/RamayanaTheFilm,Hindi/Telugu,390,0.558
+Reddit,reddit_r/RamayanaTheFilm,Hindi,30722,0.541
+Reddit,reddit_r/bollywood,Japanese/English,4,0.492
+Reddit,reddit_r/IndianCinema,Hindi/Telugu,116,0.488

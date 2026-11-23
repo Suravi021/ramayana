@@ -173,6 +173,9 @@ def clean_critics():
     full['text'] = full.text.str.strip().str.rstrip('"”').str.replace(r'^Also Read:.*$', '', regex=True, flags=re.M).str.strip()
     full['film_key'] = FILM_KEY   # every block is a review OF Part 1; mentions of Adipurush etc. are comparisons
     full['n_words'] = full.text.str.split().str.len()
+    full['is_review'] = ~full.publication.str.strip().eq('ThePrint')
+    log('imdb', 'ThePrint text is a round-up of foreign press coverage (BBC, China export), not a review of the film', (~full.is_review).sum(),
+        'Kept in file, flagged is_review=False, excluded from critic sentiment and term analysis', 'Its words (China, export, BBC) describe media coverage, not the film; it would distort the critic voice')
     log('imdb', 'Full-text critic reviews in imdb.txt with no numeric score', len(full),
         'Kept for sentiment only; flagged has_score=False', 'Film-level critic score comes from the rated reviews; text still carries tone')
     log('imdb', 'Full reviews mention other works (Adipurush, 1987 serial) in passing', full.text.str.contains('adipurush|ramanand', case=False).sum(),
@@ -352,13 +355,14 @@ def main():
     comments['compound'] = comments.body_clean.map(lambda s: sia.polarity_scores(s)['compound'])
     critics['compound'] = critics.review_text.map(lambda s: sia.polarity_scores(s)['compound'])
     imdb_texts['compound'] = imdb_texts.text.map(lambda s: sentence_vader(sia, s))
+    rev_texts = imdb_texts[imdb_texts.is_review]
 
     sent = pd.concat([
         comments.groupby(['film_key', 'subreddit']).compound.agg(['mean', 'size']).reset_index()
                 .assign(source=lambda d: 'reddit_r/' + d.subreddit).drop(columns='subreddit'),
         comments.groupby('film_key').compound.agg(['mean', 'size']).reset_index().assign(source='reddit_all'),
         critics.groupby('film_key').compound.agg(['mean', 'size']).reset_index().assign(source='critic_blurbs'),
-        imdb_texts.groupby('film_key').compound.agg(['mean', 'size']).reset_index().assign(source='imdb_txt_review_texts'),
+        rev_texts.groupby('film_key').compound.agg(['mean', 'size']).reset_index().assign(source='imdb_txt_review_texts'),
     ]).rename(columns={'mean': 'mean_compound', 'size': 'n'})[['film_key', 'source', 'n', 'mean_compound']]
     sent.to_csv(CLEAN / 'sentiment_by_film_source.csv', index=False)
     print(sent.to_string(index=False))
@@ -370,7 +374,7 @@ def main():
         ('Critics: star rating', critics.stars_5.mean(), 0, 5, 'stars out of 5', len(critics)),
         ('IMDb users: mean rating', imdb_mean, 1, 10, 'IMDb out of 10', int(imdb_dist.votes.sum())),
         ('Critics: blurb sentiment', p1['critic_blurbs'], -1, 1, 'VADER −1..+1', len(critics)),
-        ('Critics: full-text sentiment', p1['imdb_txt_review_texts'], -1, 1, 'VADER −1..+1', len(imdb_texts)),
+        ('Critics: full-text sentiment', p1['imdb_txt_review_texts'], -1, 1, 'VADER −1..+1', len(rev_texts)),
         ('Reddit: comment sentiment', p1['reddit_all'], -1, 1, 'VADER −1..+1', int(sent.query('film_key==@FILM_KEY and source=="reddit_all"').n.iloc[0])),
     ], columns=['voice', 'raw_value', 'scale_min', 'scale_max', 'scale', 'n'])
     voices['minmax_0_1'] = (voices.raw_value - voices.scale_min) / (voices.scale_max - voices.scale_min)
