@@ -1,0 +1,2 @@
+n,accuracy,precision_pos,recall_pos,recall_neg,threshold
+50000,0.69814,0.6490357132111804,0.86288,0.5334,compound >= 0 -> positive

@@ -1,0 +1,33 @@
+﻿step,source,problem,rows_affected,action,why
+1,box_office,"Dates stored as text (""5 November 2026"")",10,Parsed to datetime (format %d %B %Y; ISO for as_of_date),Needed for day-since-release arithmetic and joins by date
+2,box_office,"Money stored as text (""₹62.47 crore net"", ""₹1,343.49 crore"")",10,Converted to float crore with to_crore(),Arithmetic and comparison across rows
+3,box_office,Collections reported in US$ only,2,"Kept in value_usd_million, crore left NaN (not converted)",Exchange rate on the day is not in the source; converting would invent precision
+4,box_office,"Approximate values (""over ₹500 crore"")",1,"Kept the number, flagged is_lower_bound=True","It is a floor, not a measurement; must not be averaged as exact"
+5,box_office,"Counts stored as text (""59,000"" screens)",3,Converted to integer,Counts must be numeric to compute per-screen figures
+6,box_office,"Budget rows that mix Part 1 with the two-film total (₹4,000 cr)",2,"Flagged is_combined_duology; Part 1 budget = ₹2,000 cr row",Double counting would halve any ROI estimate
+7,box_office,"Two different worldwide totals (₹1,343.49 cr dated 14 Nov vs ₹1,384.50 cr undated infobox)",2,Kept both; analysis uses the dated Bollywood Hungama figure,"A dated, cited figure is traceable; the infobox one is not"
+8,box_office,"Missing day-wise collections (only day(s) [np.int64(1), np.int64(4)] reported, of 19 days up to access date)",17,Kept as NaN with is_missing=True; NOT interpolated,Bollywood day-wise curves drop sharply after weekends; any fill would fabricate the decay we want to study
+9,box_office,Raw rows in,17,"Kept all rows (flags added, none dropped)",Every row is a distinct cited figure
+10,critics,"Ratings on mixed scales (out of 4, 5 and 10)",7,Converted every rating to stars out of 5 = original/scale*5,Critic scores must share one scale before averaging
+11,critics,Uncommon rating scale (e.g. out of 4),2,Rescaled linearly like the others,Linear rescaling is the standard convention for star ratings
+12,critics,Pre-computed normalized_rating (/10) checked against our rescaling (max diff 0.00),17,Kept ours; dropped nothing,Verifies the team's earlier normalisation
+13,critics,Critic reviews with no score,0,"Kept text for sentiment, score left NaN (not imputed)",Missing critic score is not zero; imputing a mean would shrink disagreement
+14,critics,Duplicate critic blurbs,0,Dropped,Same review counted twice biases the mean
+15,imdb,"IMDb vote distribution stored as text (""1: 46, 2: 9, 3:10"")",10,"Parsed to (stars int, votes int) with regex tolerant of missing spaces",Counts stored as text must be integers
+16,imdb,Full-text critic reviews in imdb.txt with no numeric score,3,Kept for sentiment only; flagged has_score=False,Film-level critic score comes from the rated reviews; text still carries tone
+17,imdb,"Full reviews mention other works (Adipurush, 1987 serial) in passing",3,Kept film_key = ramayana_part1_2026 for whole reviews,A review of Part 1 that compares it to Adipurush is still a review of Part 1
+18,imdb,"""Also Read:"" cross-promo lines inside review texts",2,Removed from text,Unrelated headlines would distort sentiment
+19,reddit,Lines that are not valid JSON,0,Skipped,Truncated last line of a dump still being written
+20,reddit,Raw comments loaded (all subreddits),47616,Loaded,Starting count
+21,reddit,"General-sub comments (r/bollywood, r/IndianCinema) not about any Ramayana work",12589,Dropped,They discuss other films; keeping them would mix sentiment across films
+22,reddit,"Comments about other Ramayana works (Adipurush, 1987 TV serial, anime, Part 2)",1036,Kept with their own film_key,"Same name family, different film; needed for the cross-film comparison"
+23,reddit,"Deleted / removed comments (""[deleted]"", ""[removed]"")",65,Dropped from text analysis,No text to score; replies to them are kept because they stand on their own
+24,reddit,"Bot comments (AutoModerator, *bot accounts, ""I am a bot"" signatures)",1065,Dropped,Automated text is not audience opinion
+25,reddit,Same comment id appearing twice (re-crawled),0,Dropped exact id duplicates (kept first),"Re-crawl artefact, not a second opinion"
+26,reddit,"Duplicate comments (same account, same text)",254,"Dropped, kept first",Double-posts would count one opinion twice
+27,reddit,Comments empty after removing links/quotes/images,886,Dropped,Nothing left to score
+28,reddit,Usernames (author field + u/ mentions in text),32757,Author column dropped; u/name in text replaced by [user],Personal data is not needed for film-level analysis
+29,reddit,Epoch timestamps and text scores,32757,created_utc -> IST datetime; score -> Int64,Daily analysis is in Indian time; score must be numeric
+30,box_office,Spreadsheet vs pandas: same ₹-text -> crore step done both ways,16,16/16 rows agree between LibreOffice formulas and pandas,Module 1 comparison: a spreadsheet formula is visible per cell but brittle; pandas is one tested function reused everywhere
+31,all,"Voices on different scales (stars /5, IMDb /10, sentiment −1..+1)",5,Min-max to 0–1 using each scale's full range; z-score across voices,Puts every voice on one footing for comparison
+32,sentiment,VADER validated on IMDb 50K labelled corpus: accuracy 69.8%,50000,Threshold compound >= 0 = positive; method accepted with known bias,Check the method on labelled data before trusting it on unlabelled Ramayana text

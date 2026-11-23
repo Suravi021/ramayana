@@ -1,0 +1,18 @@
+film_key,metric,territory,day_number,as_of_date,value_raw,wiki_footnote,cited_publication,source_url,access_date,value_date,value_crore,value_usd_million,is_lower_bound,value_int,is_combined_duology
+ramayana_part1_2026,release_date,india,,,5 November 2026,infobox,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,2026-11-05,,,False,,False
+ramayana_part1_2026,premiere_date,academy_museum,,,27 October 2026,infobox,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,2026-10-27,,,False,,False
+ramayana_part1_2026,budget,,,,"₹2,000 crore",infobox,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,2000.0,,False,,False
+ramayana_part1_2026,budget_court_filing,,,,"Part One cost Rs 2,000 Crore; combined Rs 4,000 Crore",5,"Times of India, 3 Nov 2026",https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,2000.0,,False,,True
+ramayana_part1_2026,budget_combined_duology,,,,"₹4,000 crore (US$430 million)",20,"Times of India, 15 Jul 2025",https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,4000.0,430.0,False,,True
+ramayana_part1_2026,screens,worldwide,1,2026-11-05,"59,000",150,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,,,False,59000,False
+ramayana_part1_2026,screens,overseas,1,2026-11-05,"50,000",150,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,,,False,50000,False
+ramayana_part1_2026,screens,india,1,2026-11-05,"9,000",150,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,,,False,9000,False
+ramayana_part1_2026,opening_day_net,india,1,2026-11-05,₹62.47 crore net,161,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,62.47,,False,,False
+ramayana_part1_2026,opening_day_gross,worldwide,1,2026-11-05,₹121.62 crore gross,161,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,121.62,,False,,False
+ramayana_part1_2026,opening_weekend_gross,worldwide,4,2026-11-08,over ₹500 crore,162,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,500.0,,True,,False
+ramayana_part1_2026,opening_weekend_gross_usd,worldwide,4,2026-11-08,$55.7 million,163,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,,55.7,False,,False
+ramayana_part1_2026,opening_weekend_gross_usd,overseas,4,2026-11-08,$22.83 million,164,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,,22.83,False,,False
+ramayana_part1_2026,cumulative_gross,india,,,₹870.99 crore,6,"Bollywood Hungama, retrieved 14 Nov 2026",https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,870.99,,False,,False
+ramayana_part1_2026,cumulative_gross,overseas,,,₹472.50 crore,6,"Bollywood Hungama, retrieved 14 Nov 2026",https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,472.5,,False,,False
+ramayana_part1_2026,cumulative_gross,worldwide,,,"₹1,343.49 crore",6,"Bollywood Hungama, retrieved 14 Nov 2026",https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,1343.49,,False,,False
+ramayana_part1_2026,box_office_infobox,worldwide,,,"₹1,384.50 crore",infobox,,https://en.wikipedia.org/wiki/Ramayana:_Part_1,2026-11-23,,1384.5,,False,,False
